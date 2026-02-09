@@ -1,0 +1,79 @@
+{
+  "kind": "build_request",
+  "title": "Prepare app for public publish and finalize branding (Instant Movie Director)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-16",
+      "text": "Update the app’s visible branding to use the app name “Instant Movie Director” consistently, including the header logo text and the browser tab title.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The afternoon movie called instant movie director",
+          "Publish"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header brand text no longer shows “Production Studio” and instead shows “Instant Movie Director”.",
+        "The HTML document title no longer shows “Prompt-driven Movie Production Team Workspace” and instead shows “Instant Movie Director”.",
+        "All user-facing text added/changed for this requirement is in English."
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Add a simple in-app “Publish” / “Deployment” help surface that explains how to deploy this project as a live Internet Computer app (local deploy and mainnet deploy), including the exact commands a developer should run and what artifacts/IDs to expect.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Publish",
+          "Nope I think it's ready to go I think I would like to make this a live app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The app UI contains an obvious way to open a “Publish” / “Deployment” help view (e.g., from the footer or header).",
+        "The help view includes clear step-by-step instructions for deploying on the Internet Computer, covering both local development deployment and IC mainnet deployment.",
+        "The instructions are fully readable without external links (links may be included but are not required to understand the steps).",
+        "All user-facing text added/changed for this requirement is in English."
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Add repository documentation for publishing: create or update a deployment guide file (e.g., DEPLOYMENT.md) that documents prerequisites, build steps, deployment steps, and common troubleshooting notes for making the app publicly accessible on the Internet Computer.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Publish"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A deployment guide file exists in the repo and includes: prerequisites, local deploy steps, mainnet deploy steps, and basic troubleshooting.",
+        "The guide does not instruct using unsupported hosting providers or external databases/services.",
+        "The guide references the app name “Instant Movie Director” in user-facing contexts."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor in backend/main.mo (no additional backend services).",
+    "Only generate backend/migration.mo if an upgrade requires state migration (conditional migration policy).",
+    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or anything under frontend/src/components/ui (compose instead).",
+    "Do not add third-party authentication providers; only Internet Identity is supported."
+  ],
+  "nonGoals": [
+    "Adding new creative workflow features (prompts, assembly, export) beyond what already exists.",
+    "Integrating external hosting (AWS/GCP/Azure/Vercel/Netlify) or external databases.",
+    "Adding payments, email, push notifications, or real-time WebSocket features."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

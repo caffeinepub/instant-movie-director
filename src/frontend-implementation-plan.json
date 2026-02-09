@@ -1,0 +1,66 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Prepare for public publish & finalize branding (Instant Movie Director)",
+  "requirements": [
+    {
+      "id": "REQ-16",
+      "summary": "Update visible branding to consistently use “Instant Movie Director” (header brand text + browser tab title).",
+      "acceptanceCriteria": [
+        "Header brand text no longer shows “Production Studio” and instead shows “Instant Movie Director”.",
+        "The HTML document title no longer shows “Prompt-driven Movie Production Team Workspace” and instead shows “Instant Movie Director”.",
+        "All user-facing text added/changed for this requirement is in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/assets/BrandLogo.tsx",
+          "operation": "modify",
+          "description": "Replace the header brand text from “Production Studio” to “Instant Movie Director” and ensure any logo alt/accessible text is consistent with the new app name."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Update the HTML document <title> to “Instant Movie Director” so the browser tab title matches the app branding."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Add an in-app Publish/Deployment help view with readable local and mainnet Internet Computer deployment instructions and expected artifacts/IDs.",
+      "acceptanceCriteria": [
+        "The app UI contains an obvious way to open a “Publish” / “Deployment” help view (e.g., from the footer or header).",
+        "The help view includes clear step-by-step instructions for deploying on the Internet Computer, covering both local development deployment and IC mainnet deployment.",
+        "The instructions are fully readable without external links (links may be included but are not required to understand the steps).",
+        "All user-facing text added/changed for this requirement is in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/publish/PublishHelpDialog.tsx",
+          "operation": "create",
+          "description": "Create a Publish/Deployment help surface as a dialog (or sheet) that includes fully readable step-by-step instructions for: local dfx deploy and IC mainnet deploy, including exact commands and what to expect (e.g., canister IDs, frontend canister URL, where dfx stores ids). Use shadcn-ui components (e.g., Dialog, Button, Separator, ScrollArea) to present the content cleanly. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/layout/StudioLayout.tsx",
+          "operation": "modify",
+          "description": "Wire the Publish/Deployment help surface into the UI with an obvious entry point from the footer (e.g., a “Publish / Deployment” button/link) that opens the PublishHelpDialog. Use shadcn-ui Button (and any needed Dialog trigger patterns) for consistent styling. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Add repository deployment documentation (DEPLOYMENT guide) for prerequisites, build, local deploy, mainnet deploy, and troubleshooting for Instant Movie Director.",
+      "acceptanceCriteria": [
+        "A deployment guide file exists in the repo and includes: prerequisites, local deploy steps, mainnet deploy steps, and basic troubleshooting.",
+        "The guide does not instruct using unsupported hosting providers or external databases/services.",
+        "The guide references the app name “Instant Movie Director” in user-facing contexts."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/DEPLOYMENT.md",
+          "operation": "create",
+          "description": "Add a deployment guide for “Instant Movie Director” documenting prerequisites (dfx/Node), build steps, local deploy steps, mainnet deploy steps, expected artifacts/IDs (e.g., canister IDs and where to find them), and common troubleshooting. Keep instructions self-contained and limited to Internet Computer tooling (no external hosting providers or external databases/services)."
+        }
+      ]
+    }
+  ]
+}

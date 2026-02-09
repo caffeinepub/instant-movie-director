@@ -1,0 +1,51 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-09T01:34:26.496Z",
+  "summary": "REQ-16 appears implemented (header brand text and HTML title updated to “Instant Movie Director”). A Publish/Deploy help dialog and a DEPLOYMENT.md file were added, but the diff excerpts are truncated and only clearly show prerequisites + local deploy steps; mainnet deploy steps, expected artifacts/IDs, and troubleshooting are not evidenced. Some unrelated changes (backend authorization/state changes and a new footer credit/link) appear outside the BuildRequest scope.",
+  "missing_requirements": [
+    {
+      "id": "REQ-17",
+      "requirement": "Help view includes clear step-by-step instructions covering both local development deployment and IC mainnet deployment, including exact commands and expected artifacts/IDs, readable without external links.",
+      "reason": "The added PublishHelpDialog content in the diff clearly shows prerequisites and local deployment steps, but the excerpt is truncated before any mainnet deployment steps and before the “what artifacts/IDs to expect” section can be confirmed.",
+      "evidence": [
+        "frontend/src/features/publish/PublishHelpDialog.tsx (truncated)"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "requirement": "Deployment guide file includes prerequisites, build steps, local deploy steps, mainnet deploy steps, and basic troubleshooting; avoids unsupported hosting/external services; references app name “Instant Movie Director”.",
+      "reason": "DEPLOYMENT.md is added and references “Instant Movie Director” and prerequisites, but the diff is truncated early (ending around the start of local deploy step 1). Build steps, mainnet steps, and troubleshooting are not visible in the provided excerpt, so completion cannot be verified from the diff summary.",
+      "evidence": [
+        "frontend/DEPLOYMENT.md (truncated)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Backend actor updated with access control/authorization logic and additional user profile and project permission checks.",
+      "reason": "The BuildRequest focuses on frontend branding + publish help surface + deployment documentation. No backend behavior changes were requested, and the diff shows substantial backend edits unrelated to those requirements.",
+      "evidence": [
+        "backend/main.mo (truncated)"
+      ]
+    },
+    {
+      "description": "Footer credit/link added (“© 2026. Built with ❤️ using caffeine.ai”).",
+      "reason": "Not requested by REQ-16/17/18; introduces new user-facing branding/credit text beyond the specified app branding changes.",
+      "evidence": [
+        "frontend/src/features/layout/StudioLayout.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/DEPLOYMENT.md",
+    "frontend/index.html",
+    "frontend/src/features/assets/BrandLogo.tsx",
+    "frontend/src/features/layout/StudioLayout.tsx",
+    "frontend/src/features/publish/PublishHelpDialog.tsx",
+    "project_state.json"
+  ]
+}

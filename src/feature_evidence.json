@@ -1,0 +1,64 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-app-s-visible-branding-to-use-the-app-name-instant-movie-director-consistently-including-the-header-logo-text-and-the-browser-tab-title",
+      "featureTitle": "Update the app’s visible branding to use the app name “Instant Movie Director” consistently, including the header logo text and the browser tab title.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/features/assets/BrandLogo.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-simple-in-app-publish-deployment-help-surface-that-explains-how-to-deploy-this-project-as-a-live-internet-computer-app-local-deploy-and-mainnet-deploy-including-the-exact-commands-a-developer-should-run-and-what-artifacts-ids-to-expect",
+      "featureTitle": "Add a simple in-app “Publish” / “Deployment” help surface that explains how to deploy this project as a live Internet Computer app (local deploy and mainnet deploy), including the exact commands a developer should run and what artifacts/IDs to expect.",
+      "files": [
+        "frontend/src/features/layout/StudioLayout.tsx",
+        "frontend/src/features/publish/PublishHelpDialog.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-repository-documentation-for-publishing-create-or-update-a-deployment-guide-file-e-g-deployment-md-that-documents-prerequisites-build-steps-deployment-steps-and-common-troubleshooting-notes-for-making-the-app-publicly-accessible-on-the-internet-computer",
+      "featureTitle": "Add repository documentation for publishing: create or update a deployment guide file (e.g., DEPLOYMENT.md) that documents prerequisites, build steps, deployment steps, and common troubleshooting notes for making the app publicly accessible on the Internet Computer.",
+      "files": [
+        "frontend/DEPLOYMENT.md"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 9,
+  "summary": "App that simulates a full movie production team (director, screenwriter, cinematographer/cameraman, etc.) where the user has highly open-ended creative control and drives essentially all workflow through AI prompt-based tools, including assembling created scenes into a full-length film/short or music video with optional song upload and audio-synced sequencing.",
+  "architectural_notes": [
+    "Model the app as multiple film-production roles (director, writer, cinematography, etc.) coordinated to produce movie outputs under user prompt control.",
+    "Increase prompt-first design: maximize user control by making most actions/outputs across roles and project elements driven by editable AI prompts.",
+    "Support an assembly/timeline stage that compiles individual scenes into a single deliverable (feature/short/music video), including optional audio track upload and audio-synced sequencing/editing for music videos.",
+    "Plan for a production deployment target and a user-facing publish/release workflow (build, deploy, and verify the live app)."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-prompt-driven-workspace-that-models-a-movie-production-process-as-a-set-of-roles-at-minimum-director-screenwriter-cinematographer-cameraman-producer-editor-sound-where-the-user-can-enter-and-iteratively-refine-prompts-notes-per-role-for-a-single-movie-project",
+      "title": "Create a prompt-driven workspace that models a movie production process as a set of roles (at minimum: Director, Screenwriter, Cinematographer/Cameraman, Producer, Editor, Sound) where the user can enter and iteratively refine prompts/notes per role for a single movie project.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-project-level-structure-to-organize-the-creative-process-at-minimum-logline-synopsis-characters-locations-scenes-and-allow-the-user-to-attach-role-prompts-notes-to-any-of-these-elements",
+      "title": "Add a project-level structure to organize the creative process (at minimum: Logline, Synopsis, Characters, Locations, Scenes) and allow the user to attach role prompts/notes to any of these elements.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-an-export-feature-that-lets-the-user-export-a-project-into-human-readable-text-and-json-files-directly-from-the-frontend-no-external-services",
+      "title": "Provide an export feature that lets the user export a project into human-readable text and JSON files directly from the frontend (no external services).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-internet-identity-sign-in-out-ui-and-gate-project-saving-loading-to-signed-in-users-while-still-allowing-an-anonymous-user-to-explore-the-ui-with-a-local-non-persistent-draft-project",
+      "title": "Add Internet Identity sign-in/out UI and gate project saving/loading to signed-in users while still allowing an anonymous user to explore the UI with a local, non-persistent draft project.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-define-and-apply-a-cohesive-visual-theme-for-the-app-distinct-color-palette-typography-layout-suitable-for-a-movie-production-studio-workspace-and-apply-it-consistently-across-all-screens-and-components",
+      "title": "Define and apply a cohesive visual theme for the app (distinct color palette, typography, layout) suitable for a “movie production studio” workspace, and apply it consistently across all screens and components.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-images-logo-role-icons-to-the-frontend-and-use-them-in-the-ui-navigation-header-and-role-selectors-cards-as-static-assets-under-frontend-public-assets-generated",
+      "title": "Add generated static images (logo + role icons) to the frontend and use them in the UI (navigation/header and role selectors/cards) as static assets under frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-prompt-first-workflow-that-lets-the-user-create-view-edit-and-delete-prompt-entries-not-only-for-production-roles-but-also-for-specific-project-elements-logline-synopsis-each-character-each-location-and-each-scene-so-the-user-can-drive-the-entire-movie-project-via-prompts",
+      "title": "Add a prompt-first workflow that lets the user create, view, edit, and delete prompt entries not only for production roles, but also for specific project elements (Logline, Synopsis, each Character, each Location, and each Scene), so the user can drive the entire movie project via prompts.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-extend-the-prompt-entry-data-captured-in-the-ui-to-support-ai-tool-style-prompt-authoring-by-storing-both-a-user-prompt-and-an-optional-system-message-instructions-per-prompt-entry-and-ensure-this-data-round-trips-through-save-load-anonymous-draft-and-signed-in-persistence",
+      "title": "Extend the prompt entry data captured in the UI to support AI-tool style prompt authoring by storing both a user prompt and an optional system message/instructions per prompt entry, and ensure this data round-trips through save/load (anonymous draft and signed-in persistence).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-lightweight-no-external-service-ai-prompt-tools-utilities-that-increase-user-creative-control-by-helping-them-compose-and-reuse-prompts-without-generating-ai-outputs-inside-the-app",
+      "title": "Add lightweight, no-external-service “AI prompt tools” utilities that increase user creative control by helping them compose and reuse prompts, without generating AI outputs inside the app.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-assembly-feature-that-lets-the-user-assemble-the-existing-project-scenes-into-a-single-cohesive-output-plan-with-a-selectable-format-feature-film-short-film-or-music-video",
+      "title": "Add an \"Assembly\" feature that lets the user assemble the existing project scenes into a single cohesive output plan with a selectable format: Feature Film, Short Film, or Music Video.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-for-music-video-assemblies-add-a-song-upload-workflow-that-allows-the-user-to-upload-an-audio-file-locally-in-the-browser-and-preview-it-during-timeline-playback",
+      "title": "For Music Video assemblies, add a song upload workflow that allows the user to upload an audio file locally in the browser and preview it during timeline playback.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-a-sync-editing-experience-for-music-video-assemblies-by-letting-the-user-align-scene-cuts-to-the-song-using-a-simple-explicit-timing-model-cut-points-scene-start-times-and-ensure-playback-is-smooth-and-deterministic",
+      "title": "Provide a \"sync\" editing experience for Music Video assemblies by letting the user align scene cuts to the song using a simple, explicit timing model (cut points/scene start times) and ensure playback is smooth and deterministic.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-persist-assembly-metadata-for-signed-in-users-by-extending-the-project-data-model-end-to-end-frontend-types-backend-candid-types-save-load-conversion-while-keeping-backward-compatibility-for-existing-saved-projects",
+      "title": "Persist assembly metadata for signed-in users by extending the project data model end-to-end (frontend types, backend candid types, save/load conversion) while keeping backward compatibility for existing saved projects.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-extend-project-export-to-include-the-assembled-output-plan-including-output-type-and-timeline-cut-plan-in-both-the-text-export-and-json-export",
+      "title": "Extend project export to include the assembled output plan (including output type and timeline/cut plan) in both the text export and JSON export.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-app-s-visible-branding-to-use-the-app-name-instant-movie-director-consistently-including-the-header-logo-text-and-the-browser-tab-title",
+      "title": "Update the app’s visible branding to use the app name “Instant Movie Director” consistently, including the header logo text and the browser tab title.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-in-app-publish-deployment-help-surface-that-explains-how-to-deploy-this-project-as-a-live-internet-computer-app-local-deploy-and-mainnet-deploy-including-the-exact-commands-a-developer-should-run-and-what-artifacts-ids-to-expect",
+      "title": "Add a simple in-app “Publish” / “Deployment” help surface that explains how to deploy this project as a live Internet Computer app (local deploy and mainnet deploy), including the exact commands a developer should run and what artifacts/IDs to expect.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-repository-documentation-for-publishing-create-or-update-a-deployment-guide-file-e-g-deployment-md-that-documents-prerequisites-build-steps-deployment-steps-and-common-troubleshooting-notes-for-making-the-app-publicly-accessible-on-the-internet-computer",
+      "title": "Add repository documentation for publishing: create or update a deployment guide file (e.g., DEPLOYMENT.md) that documents prerequisites, build steps, deployment steps, and common troubleshooting notes for making the app publicly accessible on the Internet Computer.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a prompt-driven app that behaves like a complete movie production team (director, screenwriter, cameraman/cinematographer, and other roles) to let the user control the creative process.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Implement backend persistence for movie projects and role prompt entries so signed-in users can save, load, update, and delete their projects across sessions.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Expand the app to provide more open-ended creative control, making the workflow more fully driven by user prompts via AI tools across roles and project elements.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add a generation/assembly feature that takes all created scenes and produces a cohesive full-length output (feature film, short film, or music video); for music videos allow uploading a song/audio track and automatically sync/edit the video timeline so cuts/sequence align smoothly with the music.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add a publish/deploy workflow to make the app a live publicly accessible application.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Instant Movie Director",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
